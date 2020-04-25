@@ -1,114 +1,94 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React from "react";
+import { StyleSheet, Text, View, AppRegistry, SafeAreaView } from "react-native";
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { NativeRouter, Route, Link } from "react-router-native";
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { Button, WhiteSpace, SearchBar } from '@ant-design/react-native';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+import Task from './components/Task';
+
+const tasks = [
+  { title: 'Turn off computer overnight', points: 5, color: '#59F8DB99' },
+  { title: 'Plant a seed', points: 20, color: '#02D40A99' },
+  { title: 'Take public transportation', points: 10, color: '#F8595999' },
+  { title: 'Take a shower in under 10 mins', points: 5, color: '#59F8DB99' },
+  { title: 'Buy a second hand item', points: 15, color: '#A899E499' },
+  { title: 'Recycle a bottle or can', points: 5, color: '#02D40A99' },
+  { title: 'Don\'t use a coffee stirer', points: 5, color: '#59F8DB99' },
+];
+
+const App = () => (
+  // <NativeRouter>
+  //   <View style={styles.container}>
+  //     <View style={styles.nav}>
+  //       <Link to="/" underlayColor="#f0f4f7" style={styles.navItem}>
+  //         <Text>Home</Text>
+  //       </Link>
+  //       <Link
+  //         to="/about"
+  //         underlayColor="#f0f4f7"
+  //         style={styles.navItem}
+  //       >
+  //         <Text>About</Text>
+  //       </Link>
+  //       <Link
+  //         to="/topics"
+  //         underlayColor="#f0f4f7"
+  //         style={styles.navItem}
+  //       >
+  //         <Text>Topics</Text>
+  //       </Link>
+  //     </View>
+
+  //     <Route exact path="/" component={Home} />
+  //     <Route path="/about" component={About} />
+  //     <Route path="/topics" component={Topics} />
+  //   </View>
+  // </NativeRouter>
+
+  <SafeAreaView style={{}}>
+    <View>
+      <WhiteSpace size="lg" />
+      <Text style={{ fontSize: 32, textAlign: 'center' }}>Checklist</Text>
+      <WhiteSpace size="lg" />
+      <SearchBar defaultValue="" placeholder="Search" />
+      <WhiteSpace size="lg" />
+      {tasks.map((task) => {
+        return (
+          <>
+            <Task title={task.title} points={task.points} color={task.color} />
+            <WhiteSpace size="lg" />
+          </>
+        )
+      })}
+    </View>
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    marginTop: 25,
+    padding: 10
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  header: {
+    fontSize: 20
   },
-  body: {
-    backgroundColor: Colors.white,
+  nav: {
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  navItem: {
+    flex: 1,
+    alignItems: "center",
+    padding: 10
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  subNavItem: {
+    padding: 5
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  topic: {
+    textAlign: "center",
+    fontSize: 15
+  }
 });
 
 export default App;
