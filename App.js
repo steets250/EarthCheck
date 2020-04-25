@@ -7,6 +7,8 @@ import { Button, WhiteSpace, SearchBar } from '@ant-design/react-native';
 
 import Task from './components/Task';
 
+import Navigation from './components/Navigation';
+
 const tasks = [
   { title: 'Turn off computer overnight', points: 5, color: '#59F8DB99' },
   { title: 'Plant a seed', points: 20, color: '#02D40A99' },
@@ -48,7 +50,7 @@ const App = () => (
 
   <SafeAreaView style={{}}>
     <View>
-      <WhiteSpace size="lg" />
+      {/*<WhiteSpace size="lg" />
       <Text style={{ fontSize: 32, textAlign: 'center' }}>Checklist</Text>
       <WhiteSpace size="lg" />
       <SearchBar defaultValue="" placeholder="Search" />
@@ -60,7 +62,8 @@ const App = () => (
             <WhiteSpace size="lg" />
           </>
         )
-      })}
+      })}*/}
+      <Navigation/>
     </View>
   </SafeAreaView>
 );
