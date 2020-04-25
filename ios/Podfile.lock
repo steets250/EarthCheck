@@ -346,16 +346,15 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - CocoaLibEvent
-    - Flipper-PeerTalk
   trunk:
     - boost-for-react-native
     - CocoaAsyncSocket
+    - CocoaLibEvent
     - Flipper
     - Flipper-DoubleConversion
     - Flipper-Folly
     - Flipper-Glog
+    - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
     - OpenSSL-Universal
@@ -454,4 +453,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e94f47eda9f14d84abe83fa87ba6e7dcf1b9434e
 
-COCOAPODS: 1.8.0.beta.1
+COCOAPODS: 1.9.1
