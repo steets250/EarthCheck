@@ -1,5 +1,5 @@
 import React from "react";
-
+import Modal from 'react-native-modal';
 import { View, Text } from "react-native";
 import { Flex, Checkbox, Row } from "@ant-design/react-native";
 
@@ -28,8 +28,14 @@ const Task = (props) => {
             color = '#80008055';
     }
 
+    const onTouch = () => {
+        
+    }
+
     return (
-        <View style={{ ...props.style, height: 65, backgroundColor: color, borderRadius: 20, justifyContent: 'center' }}>
+
+        <View onTouchEnd={onTouch} style={{ ...props.style, height: 65, backgroundColor: color, borderRadius: 20, justifyContent: 'center' }}>
+            
             <Flex direction="row" justify="between" align="center" style={{ padding: 16 }}>
                 <View style={{ width: '15%' }}>
                     <Checkbox />

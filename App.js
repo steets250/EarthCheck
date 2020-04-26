@@ -8,7 +8,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 
 const App = () => (
   // <LeaderboardPage />
-  <ChecklistPage />
+  <ChecklistPage></ChecklistPage>
 );
 
 export default App;
