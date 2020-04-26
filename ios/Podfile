@@ -77,6 +77,8 @@ target 'EarthCheck' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+
+
   target 'EarthCheckTests' do
     inherit! :complete
     # Pods for testing

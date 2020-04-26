@@ -28,10 +28,10 @@ class App extends Component {
   render() {
     return (
       <NativeRouter>
-        <Route path="/dashboard" render={() => {<DashboardPage id={this.state.id}/>}} />
-        <Route path="/checklist" render={() => {<ChecklistPage id={this.state.id} />}} />
+        <Route path="/dashboard" render={() => {return <DashboardPage id={this.state.id}/>}} />
+        <Route path="/checklist" render={() => {return <ChecklistPage id={this.state.id} />}} />
         <Route path="/leaderboard" component={LeaderboardPage} />
-        <Route path="/" component={LoginPage} />
+        <Route path="/" render={() => {return <DashboardPage id={this.state.id}/>}} />
       </NativeRouter>
     );
   }

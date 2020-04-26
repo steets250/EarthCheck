@@ -1,28 +1,31 @@
 import React from "react";
 
-import { View, Text} from "react-native";
-import { Flex, Checkbox, Row } from "@ant-design/react-native";
+import { View, Text } from "react-native";
+import Icon from 'react-native-ionicons';
+import { Link } from "react-router-native";
 
-import NavigationItem from '../NavigationItem';
-
-const Checklist = require("../../assets/icons/checklist.png");
-const Dashboard = require("../../assets/icons/dashboard.png");
-const Leaderboard = require("../../assets/icons/leaderboard.png");
-
-const NavigationBar = (props) => {
-    const items = [{image: Dashboard}, {image: Checklist}, {image: Leaderboard}];//props.items;
-    const width = 100/items.length;
-    return(
-        <View style={{height: 50, justifyContent: 'center'}}>
-            <Flex direction="row" justify="between" align="center">
-                {items.map((item, index) => {
-                    return (
-                        <NavigationItem key={index} image={item.image} width={width}/>
-                    );
-                })}
-            </Flex>
-        </View>
+const NavigationBar = () => {
+    return (
+        <View>
+        <Link
+          to='/dashboard'
+          underlayColor="#f0f4f7"
+        >
+          <Text>Rendering with React</Text>
+        </Link>
+        <Link
+          to='/checklist'
+          underlayColor="#f0f4f7"
+        >
+          <Text>Components</Text>
+        </Link>
+        <Link
+          to='/leaderboard'
+          underlayColor="#f0f4f7"
+        >
+          <Text>Props v. State</Text>
+        </Link>
+      </View>
     );
-}
-
+  }
 export default NavigationBar;
