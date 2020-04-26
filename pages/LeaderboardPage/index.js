@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-
-import NavigationBar from '../../components/NavigationBar';
-import LeaderboardEntry from '../../components/LeaderboardEntry';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { Flex } from '@ant-design/react-native';
+
+import PageContainer from '../../components/PageContainer';
+import LeaderboardEntry from '../../components/LeaderboardEntry';
 
 const people = [
     { title: "justin", scores: "10000", position: "1.", },
@@ -21,11 +21,11 @@ const people = [
 
 const LeaderboardPage = () => {
     return (
-        <>
+        <PageContainer>
             <SafeAreaProvider>
-                <SafeAreaView style={{ backgroundColor: "#5FBA62", height: '90%' }}>
+                <SafeAreaView style={{backgroundColor: "#5FBA62"}}>
                     <Flex style={{ height: "8%" }}>
-                        <Text style={{ fontSize: 34, color: "white", marginLeft: 20, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
+                        <Text style={{ fontSize: 34, color: "white", marginHorizontal: 16, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
                     </Flex>
                     <View style={{ height: "96%" }}>
                         <ScrollView>
@@ -37,9 +37,8 @@ const LeaderboardPage = () => {
                         </ScrollView>
                     </View>
                 </SafeAreaView>
-                <NavigationBar />
             </SafeAreaProvider>
-        </>
+        </PageContainer>
     );
 }
 

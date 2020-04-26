@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Image, View } from 'react-native';
 import { Flex } from '@ant-design/react-native';
 
-const LeaderboardTop= (props) => {
+const LeaderboardTop = (props) => {
     const people = props.people;
 
     return(

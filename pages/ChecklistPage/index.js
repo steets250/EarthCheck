@@ -3,6 +3,7 @@ import { View, Text, ScrollView, SafeAreaView } from 'react-native';
 import { WhiteSpace, SearchBar } from '@ant-design/react-native';
 
 import Task from '../../components/Task';
+import PageContainer from '../../components/PageContainer';
 
 import { getWays } from '../../actions/data';
 
@@ -259,7 +260,7 @@ class ChecklistPage extends Component {
         ways: [],
     };
 
-    componentWillMount() {
+    componentDidMount() {
         getWays((data, error) => {
             if (!error) {
                 this.setState({
@@ -271,23 +272,25 @@ class ChecklistPage extends Component {
 
     render(props) {
         return (
-            <SafeAreaView>
-                <WhiteSpace size="lg" />
-                <Text style={{ fontSize: 34, textAlign: 'left', fontFamily: 'Avenir-Light', marginLeft: 20 }}>Checklist</Text>
-                <WhiteSpace size="lg" />
-                <SearchBar defaultValue="" placeholder="Search" cancelText="Cancel" />
-                <WhiteSpace size="lg" />
-                <ScrollView style={{ height: '100%' }}>
-                    {tasks.map((task) => {
-                        return (
-                            <>
-                                <Task key={task.id} task={task} style={{ marginHorizontal: 32 }} />
-                                <WhiteSpace size="lg" />
-                            </>
-                        )
-                    })}
-                </ScrollView>
-            </SafeAreaView >
+            <PageContainer>
+                <SafeAreaView style={{ height: '100%' }}>
+                    <WhiteSpace size="lg" />
+                    <Text style={{ fontSize: 32, textAlign: 'center', fontFamily: 'Avenir-Light' }}>Checklist</Text>
+                    <WhiteSpace size="lg" />
+                    <SearchBar defaultValue="" placeholder="Search" cancelText="Cancel" />
+                    <WhiteSpace size="lg" />
+                    <ScrollView style={{ height: '100%' }}>
+                        {tasks.map((task) => {
+                            return (
+                                <>
+                                    <Task key={task.id} task={task} style={{ marginHorizontal: 32 }} />
+                                    <WhiteSpace size="lg" />
+                                </>
+                            )
+                        })}
+                    </ScrollView>
+                </SafeAreaView >
+            </PageContainer>
         )
     }
 }
