@@ -5,9 +5,9 @@ import { Flex, Checkbox, Row } from "@ant-design/react-native";
 
 import NavigationItem from '../NavigationItem';
 
-import Checklist from "../../assets/icons/checklist.svg";
-import Dashboard from "../../assets/icons/dashboard.svg";
-import Leaderboard from "../../assets/icons/leaderboard.svg";
+const Checklist = require("../../assets/icons/checklist.png");
+const Dashboard = require("../../assets/icons/dashboard.png");
+const Leaderboard = require("../../assets/icons/leaderboard.png");
 
 const NavigationBar = (props) => {
     const items = [{image: Dashboard}, {image: Checklist}, {image: Leaderboard}];//props.items;

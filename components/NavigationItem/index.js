@@ -7,7 +7,7 @@ const NavigationItem = (props) => {
 
     return(
         <View style={{width: props.width+'%', height: 50, backgroundColor: color, justifyContent: 'center', alignItems: 'center'}}>
-            <props.image width={30} height={30} />
+            <Image source={props.image} style={{width: 30, height: 30}} />
         </View>
     );
 }

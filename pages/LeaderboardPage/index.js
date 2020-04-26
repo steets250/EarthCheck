@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
-import Leaderboard from '../../components/Leaderboard';
+import NavigationBar from '../../components/NavigationBar';
+import LeaderboardEntry from '../../components/LeaderboardEntry';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { Flex } from '@ant-design/react-native';
 
 const people = [
     { title: "justin", scores: "10000", position: "1.", },
@@ -18,16 +21,25 @@ const people = [
 
 const LeaderboardPage = () => {
     return (
-        <View style={{ backgroundColor: "green", height: "100%" }}>
-            <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 10, marginBottom: 10, fontWeight: "bold", fontSize: 24, color: "white" }}>Leaderboard</Text>
-            {/* <View style={{ backgroundColor: "white", borderRadius: 20, justifyContent: "center", marginHorizontal: 40, marginBottom: 30, marginTop: 20 }}>
-            </View> */}
-            {people.map((person) => {
-                return(
-                    <Leaderboard title={person.title} scores={person.scores} position={person.position}></Leaderboard>
-                );
-            })}
-        </View>
+        <>
+            <SafeAreaProvider>
+                <SafeAreaView style={{ backgroundColor: "#5FBA62", height: '90%' }}>
+                    <Flex style={{ height: "10%" }}>
+                        <Text style={{ fontSize: 34, color: "white", marginHorizontal: 16, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
+                    </Flex>
+                    <View style={{ height: "95%" }}>
+                        <ScrollView>
+                            {people.map((person, index) => {
+                                return (
+                                    <LeaderboardEntry key={index} place={index} title={person.title} scores={person.scores} position={person.position} />
+                                );
+                            })}
+                        </ScrollView>
+                    </View>
+                </SafeAreaView>
+                <NavigationBar />
+            </SafeAreaProvider>
+        </>
     );
 }
 
