@@ -7,7 +7,7 @@ import { Button, WhiteSpace, SearchBar } from '@ant-design/react-native';
 
 import Task from './components/Task';
 
-import Navigation from './components/Navigation';
+import Leaderboard from './components/Leaderboard';
 
 const tasks = [
   { title: 'Turn off computer overnight', points: 5, color: '#59F8DB99' },
@@ -48,24 +48,26 @@ const App = () => (
   //   </View>
   // </NativeRouter>
 
-  <SafeAreaView style={{}}>
-    <View>
-      {/*<WhiteSpace size="lg" />
-      <Text style={{ fontSize: 32, textAlign: 'center' }}>Checklist</Text>
-      <WhiteSpace size="lg" />
-      <SearchBar defaultValue="" placeholder="Search" />
-      <WhiteSpace size="lg" />
-      {tasks.map((task) => {
-        return (
-          <>
-            <Task title={task.title} points={task.points} color={task.color} />
-            <WhiteSpace size="lg" />
-          </>
-        )
-      })}*/}
-      <Navigation/>
-    </View>
-  </SafeAreaView>
+      /*<SafeAreaView style={{backgroundColor: "green", height: "100%"}}>
+        <Text style={{textAlignVertical: "center", textAlign: "center", marginTop: 10, marginBottom: 10, fontWeight: "bold", fontSize: 24, color: "white"}}>Leaderboard</Text>
+        <View style={{ backgroundColor: "white", borderRadius: 20, justifyContent: "center", marginHorizontal: 40, marginBottom: 30, marginTop: 20}}>
+          <Leaderboard title="justin" scores="10000" position="1."></Leaderboard>
+          <Leaderboard title="thang" scores="9000" position="2."></Leaderboard>
+          <Leaderboard title="sumeet" scores="8000" position="3."></Leaderboard>
+        </View>
+        <Leaderboard title="steven" scores="7000" position="4."></Leaderboard>
+        <Leaderboard title="stanley" scores="6000" position="5."></Leaderboard>
+        <Leaderboard title="emily" scores="5000" position="6."></Leaderboard>
+        <Leaderboard title="jeffrey" scores="4000" position="7."></Leaderboard>
+        <Leaderboard title="kendall" scores="3000" position="8."></Leaderboard>
+        <Leaderboard title="amy" scores="2000" position="9."></Leaderboard>
+        <Leaderboard title="daniel" scores="1000" position="10."></Leaderboard>
+      </SafeAreaView>*/
+      <SafeAreaView style={{backgroundColor: "#E5E5E5", height: "100%"}}>
+        <Text style={{textAlignVeritcal: "center", textAlign: "center", marginTop: 350, marginBottom: 350, fontWeight: "bold", fontSize: 45}}>EarthCheck</Text>
+      </SafeAreaView>
+
+    
 );
 
 const styles = StyleSheet.create({
