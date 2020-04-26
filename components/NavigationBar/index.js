@@ -15,9 +15,9 @@ const NavigationBar = (props) => {
     return(
         <View style={{height: 50, justifyContent: 'center'}}>
             <Flex direction="row" justify="between" align="center">
-                {items.map((item) => {
+                {items.map((item, index) => {
                     return (
-                        <NavigationItem image={item.image} width={width}/>
+                        <NavigationItem key={index} image={item.image} width={width}/>
                     );
                 })}
             </Flex>

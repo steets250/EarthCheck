@@ -16,9 +16,9 @@ const LeaderboardEntry = (props) => {
     return (
         <View style={{ height: 60, backgroundColor: backgroundColor, borderRadius: 20, justifyContent: 'center', marginHorizontal: 40, marginVertical: 13, borderColor: 'black', borderWidth: 1.5 }}>
             <Flex direction="row" justify="between" align="center" style={{ padding: 16 }}>
-                <Text style={{ width: "5%" }}>{props.position}</Text>
+                <Text style={{ width: "7%" }}>{props.position}</Text>
                 <Image style={{ borderRadius: 20, width: 40, height: 40 }} source={require('../../assets/justin.jpg')} />
-                <Text style={{ width: "45%" }}>{props.title}</Text>
+                <Text style={{ width: "43%" }}>{props.title}</Text>
                 <Text style={{ width: "25%" }}>{props.scores} pts</Text>
             </Flex>
         </View>

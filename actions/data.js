@@ -1,34 +1,22 @@
-export const fetchFutureEvents = () => async dispatch => {
-    try {
-      const eventsRes = await fetch('localhost:8000/', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${Storage.get('token')}`,
-        },
-      });
-  
-      let status = await eventsRes.status;
-      if (status === 401 || status === 403) {
-        dispatch(logoutUser());
-        return;
-      }
-  
-      const futureEvents = await eventsRes.json();
-  
-      if (!futureEvents) throw new Error('Empty response from server');
-      else if (futureEvents.error) throw new Error(futureEvents.error.message);
-  
-      dispatch({
-        type: FETCH_FUTURE_EVENTS,
-        payload: futureEvents.events,
-      });
-    } catch (error) {
-      notify('Unable to fetch future events!', error.message);
-      dispatch({
-        type: EVENT_ERROR,
-        payload: error.message,
-      });
-    }
-  };
+const fetch = require("node-fetch");
+const url = 'http://localhost:8000/ways';
+
+const getData = async callback => {
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      // headers: {
+      //   Accept: 'application/json',
+      //   'Content-Type': 'application/json',
+      // },
+    });
+    const json = await response.json();
+    callback(json, null);
+  } catch (error) {
+    callback(null, error);
+  }
+};
+
+getData((data, error) => {
+  console.log(data, error);
+})

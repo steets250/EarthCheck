@@ -24,10 +24,10 @@ const LeaderboardPage = () => {
         <>
             <SafeAreaProvider>
                 <SafeAreaView style={{ backgroundColor: "#5FBA62", height: '90%' }}>
-                    <Flex style={{ height: "10%" }}>
+                    <Flex style={{ height: "8%" }}>
                         <Text style={{ fontSize: 34, color: "white", marginHorizontal: 16, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
                     </Flex>
-                    <View style={{ height: "95%" }}>
+                    <View style={{ height: "96%" }}>
                         <ScrollView>
                             {people.map((person, index) => {
                                 return (
