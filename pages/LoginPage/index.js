@@ -2,12 +2,8 @@ import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import { Button } from '@ant-design/react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import { createUser } from '../../actions/data';
 const background = require("../../assets/Bubbles.png");
-
-const handleClick = () => {
-    
-}
 
 const storeData = async (id) => {
     try {
@@ -15,6 +11,15 @@ const storeData = async (id) => {
     } catch (e) {
         alert('Issue saving login credentials.')
     }
+}
+
+const handleClick = () => {
+    createUser('noname', (data, error) => {
+        if (!error) {
+            storeData(data.id);
+            // signin!
+        }
+    })
 }
 
 const LoginPage = () => {

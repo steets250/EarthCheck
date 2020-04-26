@@ -6,7 +6,10 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import PageContainer from '../../components/PageContainer';
 const profile = require("../../assets/justin.jpg");
 
-const DashboardPage = () => {
+const DashboardPage = (props) => {
+    var weekSum = props.user.points.week.reduce(function (a, b) {
+        return a + b;
+    }, 0);
     return (
         <PageContainer>
             <SafeAreaProvider>
@@ -15,14 +18,14 @@ const DashboardPage = () => {
                     <Flex direction="row" justify="center" align="center" style={{ marginTop: 30 }}>
                         <Image source={profile} style={{ width: 100, height: 100, borderRadius: 50, }}></Image>
                     </Flex>
-                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', fontWeight: "bold", marginTop: 15 }}>Justin Nguyen</Text>
-                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', marginTop: 5 }}>Level 10</Text>
+                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', fontWeight: "bold", marginTop: 15 }}>{props.user.name}</Text>
+                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', marginTop: 5 }}>Level {props.user.points.alltime % 100}</Text>
                     <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', }}>Solider of Gaia</Text>
                     <Flex direction="row" justify="center" align="center" style={{ marginTop: 20 }}>
                         <View style={{ height: 12, width: 140, backgroundColor: "#DCD41B" }}></View>
                         <View style={{ height: 12, width: 40, backgroundColor: "white" }}></View>
                     </Flex>
-                    <Text style={{ color: "white", textAlign: "center", fontSize: 18, fontFamily: 'Avenir-Light', marginTop: 5 }}>50 points to next level</Text>
+                    <Text style={{ color: "white", textAlign: "center", fontSize: 18, fontFamily: 'Avenir-Light', marginTop: 5 }}>{props.user.points.alltime - (props.user.points.alltime % 100) * 100} points to next level</Text>
                 </SafeAreaView>
                 <View style={{ backgroundColor: "#FFFFFF", height: "50%", paddingVertical: 20 }}>
                     <Flex direction="row" justify="center" align="center" style={{ marginTop: 0 }}>
@@ -33,13 +36,13 @@ const DashboardPage = () => {
                     </Flex>
                     <Flex direction="column" justify="center" align="center" style={{ marginTop: 40 }}>
                         <View style={{ height: 50, width: 350, backgroundColor: "#5FBA62", borderRadius: 20 }}>
-                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>20 points</Text> today</Text>
+                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>{props.user.points.week[6]} points</Text> today</Text>
                         </View>
                         <View style={{ height: 50, width: 350, backgroundColor: "#5FBA62", borderRadius: 20, marginTop: 15 }}>
-                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>45 points</Text> this week</Text>
+                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>{weekSum} points</Text> this week</Text>
                         </View>
                         <View style={{ height: 50, width: 350, backgroundColor: "#5FBA62", borderRadius: 20, marginTop: 15 }}>
-                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>100 points</Text> overall</Text>
+                            <Text style={{ textAlign: "left", fontSize: 18, fontFamily: 'Avenir-Light', marginLeft: 15, marginTop: 13 }}>You have earned <Text style={{ fontWeight: "bold" }}>{props.user.points.alltime} points</Text> overall</Text>
                         </View>
                     </Flex>
                 </View>
