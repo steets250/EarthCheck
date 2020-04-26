@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ImageBackground } from 'react-native';
-import { Button } from '@ant-design/react-native';
+import { Button, InputItem } from '@ant-design/react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const background = require("../../assets/Bubbles.png");
@@ -21,8 +21,11 @@ const LoginPage = () => {
     return (
         <View style={{ backgroundColor: "#E5E5E5", height: "100%" }}>
             <ImageBackground source={background} style={{ width: '100%', height: '100%' }}>
-                <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 350, marginBottom: 350, fontSize: 45, fontFamily: 'Avenir-Light' }}>EarthCheck</Text>
-                <Button onPress={handleClick} type="primary" style={{ backgroundColor: "#5FBA62", borderRadius: 20, marginHorizontal: 80, height: 60 }}>login</Button>
+                <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 350, marginBottom: 275, fontSize: 45, fontFamily: 'Avenir-Light' }}>EarthCheck</Text>
+                <View style={{ height: 60, marginHorizontal: 80, backgroundColor: "white", borderRadius: 20, marginBottom: 15}}>
+                    <InputItem placeholder="Enter a Username"></InputItem>
+                </View>
+                <Button onPress={handleClick} type="primary" style={{ backgroundColor: "#5FBA62", borderRadius: 20, marginHorizontal: 80, height: 60 }}>signup</Button>
             </ImageBackground>
         </View>
     );
