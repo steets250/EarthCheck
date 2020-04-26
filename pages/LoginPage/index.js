@@ -1,10 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
+import { Button } from '@ant-design/react-native';
+
+const background = require("../../assets/Bubbles.png");
 
 const LoginPage = () => {
     return (
         <View style={{ backgroundColor: "#E5E5E5", height: "100%" }}>
-            <Text style={{ textAlignVeritcal: "center", textAlign: "center", marginTop: 350, marginBottom: 350, fontWeight: "bold", fontSize: 45 }}>EarthCheck</Text>
+            <ImageBackground source={background} style={{width: '100%', height: '100%'}}>
+                <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 350, marginBottom: 350, fontSize: 45, fontFamily: 'Avenir-Light' }}>EarthCheck</Text>
+                <Button type="primary" style={{ backgroundColor: "#02D40A", borderRadius: 20, marginHorizontal: 80, height: 60}}>login</Button>
+            </ImageBackground>
         </View>
     );
 }
