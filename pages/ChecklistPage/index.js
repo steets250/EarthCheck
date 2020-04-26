@@ -17,15 +17,15 @@ const tasks = [
 ];
 
 const ChecklistPage = (props) => {
-    const [ways, setWays] = useState([]);
+    // const [ways, setWays] = useState([]);
 
-    getData((data, error) => {
-        if (error) {
-            return;
-        }
+    // getData((data, error) => {
+    //     if (error) {
+    //         return;
+    //     }
 
-        setWays(data.ways);
-    });
+    //     setWays(data.ways);
+    // });
 
     return (
         <SafeAreaView>
@@ -35,7 +35,7 @@ const ChecklistPage = (props) => {
             <SearchBar defaultValue="" placeholder="Search" cancelText="Cancel"/>
             <WhiteSpace size="lg" />
             <ScrollView style={{height: '100%'}}>
-                {ways.map((task) => {
+                {tasks.map((task) => {
                     return (
                         <>
                             <Task key={task.id} task={task} style={{marginHorizontal: 32}} />

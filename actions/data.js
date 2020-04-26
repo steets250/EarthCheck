@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const url = 'http://localhost:8000/ways';
 
-const getData = async callback => {
+export const getData = async callback => {
   try {
     const response = await fetch(url, {
       method: 'GET',
