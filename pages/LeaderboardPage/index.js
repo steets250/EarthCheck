@@ -25,7 +25,7 @@ const LeaderboardPage = () => {
             <SafeAreaProvider>
                 <SafeAreaView style={{ backgroundColor: "#5FBA62", height: '90%' }}>
                     <Flex style={{ height: "8%" }}>
-                        <Text style={{ fontSize: 34, color: "white", marginHorizontal: 16, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
+                        <Text style={{ fontSize: 34, color: "white", marginLeft: 20, fontFamily: 'Avenir-Light' }}>Leaderboard</Text>
                     </Flex>
                     <View style={{ height: "96%" }}>
                         <ScrollView>

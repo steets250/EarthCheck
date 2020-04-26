@@ -4,7 +4,7 @@ import { WhiteSpace, SearchBar } from '@ant-design/react-native';
 
 import Task from '../../components/Task';
 
-import { getData } from '../../actions/data';
+import { getWays } from '../../actions/data';
 
 const tasks = [
     {
@@ -260,7 +260,7 @@ class ChecklistPage extends Component {
     };
 
     componentWillMount() {
-        getData((data, error) => {
+        getWays((data, error) => {
             if (!error) {
                 this.setState({
                     ways: data.ways,
@@ -273,7 +273,7 @@ class ChecklistPage extends Component {
         return (
             <SafeAreaView>
                 <WhiteSpace size="lg" />
-                <Text style={{ fontSize: 32, textAlign: 'center', fontFamily: 'Avenir-Light' }}>Checklist</Text>
+                <Text style={{ fontSize: 34, textAlign: 'left', fontFamily: 'Avenir-Light', marginLeft: 20 }}>Checklist</Text>
                 <WhiteSpace size="lg" />
                 <SearchBar defaultValue="" placeholder="Search" cancelText="Cancel" />
                 <WhiteSpace size="lg" />
