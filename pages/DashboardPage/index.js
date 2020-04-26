@@ -25,7 +25,7 @@ const DashboardPage = () => {
                     <Flex direction="row" justify="center" align="center" style={{marginTop: 20}}>
                         <View style={{ height: 130, width: 300, backgroundColor: "#6CC4F5", borderRadius: 25}}>
                             <Text style={{ textAlign: "left", fontSize: 28, fontFamily: 'Avenir-Light', marginLeft: 25, marginTop: 15}}>Daily Tip</Text>
-                            <Text style={{ textAlign: "left", fontSize: 13, fontFamily: 'Avenir-Light', marginLeft: 26, marginTop: 5, marginRight: 25}}>You didn't turn off the lights in 3 days! You should do it when you have the chance! Earth will thank you!</Text>
+                            <Text style={{ textAlign: "left", fontSize: 13, fontFamily: 'Avenir-Light', marginLeft: 25, marginTop: 5, marginRight: 25}}>You didn't turn off the lights in 3 days! You should do it when you have the chance! Earth will thank you!</Text>
                         </View>
                     </Flex>
                     <Flex direction="column" justify="center" align="center" style={{marginTop: 40}}>
