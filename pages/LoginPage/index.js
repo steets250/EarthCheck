@@ -26,11 +26,11 @@ const LoginPage = () => {
     return (
         <View style={{ backgroundColor: "#E5E5E5", height: "100%" }}>
             <ImageBackground source={background} style={{ width: '100%', height: '100%' }}>
-                <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 350, marginBottom: 275, fontSize: 45, fontFamily: 'Avenir-Light' }}>EarthCheck</Text>
+                <Text style={{ textAlignVertical: "center", textAlign: "center", marginTop: 175, marginBottom: 25, fontSize: 45, fontFamily: 'Avenir-Light' }}>EarthCheck</Text>
                 <View style={{ height: 60, marginHorizontal: 80, backgroundColor: "white", borderRadius: 20, marginBottom: 15}}>
-                    <InputItem placeholder="Enter a Username"></InputItem>
+                    <InputItem style={{paddingTop: 15}} last="true" placeholder="Enter Your Name"></InputItem>
                 </View>
-                <Button onPress={handleClick} type="primary" style={{ backgroundColor: "#5FBA62", borderRadius: 20, marginHorizontal: 80, height: 60 }}>signup</Button>
+                <Button onPress={handleClick} type="primary" style={{ backgroundColor: "#5FBA62", borderRadius: 20, marginHorizontal: 80, height: 60 }}>Sign In</Button>
             </ImageBackground>
         </View>
     );

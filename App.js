@@ -5,42 +5,34 @@ import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import ChecklistPage from './pages/ChecklistPage';
 import LeaderboardPage from './pages/LeaderboardPage';
-
-import { getUser } from './actions/data';
+import { NativeRouter, Route } from 'react-router-native';
 
 class App extends Component {
-  state = { user: null }
+  state = { id: null }
 
   getStoredID = async callback => {
     try {
       const value = await AsyncStorage.getItem('user_id')
-      callback('0lDYjLs5XaNvMUkOjuQv'); //test
+      callback(value);
     } catch (e) {
       console.log('oof');
     }
   }
 
   componentDidMount() {
-    this.getStoredID(() => {
-      if (value) {
-        getUser(id, (data, error) => {
-          if (!error) {
-            console.log(data);
-            this.setState({
-              user: data
-            });
-          }
-        })
-      }
+    this.getStoredID((value) => {
+      this.setState({id: value});
     })
   }
 
   render() {
     return (
-      //<LoginPage />
-      <DashboardPage user={this.state.user}/>
-      // <ChecklistPage />
-      // <LeaderboardPage />
+      <NativeRouter>
+        <Route path="/dashboard" render={() => {<DashboardPage id={this.state.id}/>}} />
+        <Route path="/checklist" render={() => {<ChecklistPage id={this.state.id} />}} />
+        <Route path="/leaderboard" component={LeaderboardPage} />
+        <Route path="/" component={LoginPage} />
+      </NativeRouter>
     );
   }
 }

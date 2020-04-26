@@ -2,9 +2,8 @@ import React, { Component, useState } from 'react';
 import { View, Text, ScrollView, SafeAreaView } from 'react-native';
 import { WhiteSpace, SearchBar } from '@ant-design/react-native';
 
-import Task from '../../components/Task';
 import PageContainer from '../../components/PageContainer';
-
+import Task from '../../components/Task';
 import { getWays } from '../../actions/data';
 
 class ChecklistPage extends Component {
