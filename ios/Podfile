@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'CleanCheck' do
-  # Pods for CleanCheck
+target 'EarthCheck' do
+  # Pods for EarthCheck
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'CleanCheck' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'CleanCheckTests' do
+  target 'EarthCheckTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'CleanCheck' do
   end
 end
 
-target 'CleanCheck-tvOS' do
-  # Pods for CleanCheck-tvOS
+target 'EarthCheck-tvOS' do
+  # Pods for EarthCheck-tvOS
 
-  target 'CleanCheck-tvOSTests' do
+  target 'EarthCheck-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

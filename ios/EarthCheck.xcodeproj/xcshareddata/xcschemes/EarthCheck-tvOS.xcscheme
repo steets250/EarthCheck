@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "CleanCheck-tvOS.app"
-               BlueprintName = "CleanCheck-tvOS"
-               ReferencedContainer = "container:CleanCheck.xcodeproj">
+               BuildableName = "EarthCheck-tvOS.app"
+               BlueprintName = "EarthCheck-tvOS"
+               ReferencedContainer = "container:EarthCheck.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "CleanCheck-tvOSTests.xctest"
-               BlueprintName = "CleanCheck-tvOSTests"
-               ReferencedContainer = "container:CleanCheck.xcodeproj">
+               BuildableName = "EarthCheck-tvOSTests.xctest"
+               BlueprintName = "EarthCheck-tvOSTests"
+               ReferencedContainer = "container:EarthCheck.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "CleanCheck-tvOS.app"
-            BlueprintName = "CleanCheck-tvOS"
-            ReferencedContainer = "container:CleanCheck.xcodeproj">
+            BuildableName = "EarthCheck-tvOS.app"
+            BlueprintName = "EarthCheck-tvOS"
+            ReferencedContainer = "container:EarthCheck.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "CleanCheck-tvOS.app"
-            BlueprintName = "CleanCheck-tvOS"
-            ReferencedContainer = "container:CleanCheck.xcodeproj">
+            BuildableName = "EarthCheck-tvOS.app"
+            BlueprintName = "EarthCheck-tvOS"
+            ReferencedContainer = "container:EarthCheck.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
