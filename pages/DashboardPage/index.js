@@ -17,7 +17,7 @@ const DashboardPage = () => {
                     </Flex>
                     <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', fontWeight: "bold", marginTop: 15 }}>Justin Nguyen</Text>
                     <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', marginTop: 5 }}>Level 10</Text>
-                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', }}>Solider of Gaia</Text>
+                    <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', }}>Mother Earth</Text>
                     <Flex direction="row" justify="center" align="center" style={{ marginTop: 20 }}>
                         <View style={{ height: 12, width: 140, backgroundColor: "#DCD41B" }}></View>
                         <View style={{ height: 12, width: 40, backgroundColor: "white" }}></View>
