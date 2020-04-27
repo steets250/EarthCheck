@@ -41,7 +41,7 @@ class DashboardPage extends Component {
                         <Flex direction="row" justify="center" align="center" style={{ marginTop: 15 }}>
                             <Image source={profile} style={{ width: 100, height: 100, borderRadius: 50, }}></Image>
                         </Flex>
-                        <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', fontWeight: "bold", marginTop: 10 }}></Text>
+        <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', fontWeight: "bold", marginTop: 10 }}>James Chen</Text>
                         <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', }}>Level {this.state.points.alltime % 100}</Text>
                         <Text style={{ color: "white", textAlign: "center", fontSize: 16, fontFamily: 'Avenir-Light', }}>Solider of Gaia</Text>
                         <Flex direction="row" justify="center" align="center" style={{ marginTop: 15 }}>

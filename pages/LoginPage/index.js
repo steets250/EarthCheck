@@ -13,11 +13,11 @@ const storeData = async (id) => {
     }
 }
 
-const handleClick = () => {
+const handleClick = (object) => {
     createUser('noname', (data, error) => {
         if (!error) {
             storeData(data.id);
-            // signin!
+            object.setState({auth: true});
         }
     })
 }

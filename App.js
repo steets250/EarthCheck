@@ -8,7 +8,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import { NativeRouter, Route } from 'react-router-native';
 
 class App extends Component {
-  state = { id: null }
+  state = { id: null, auth: false }
 
   getStoredID = async callback => {
     try {
@@ -28,10 +28,10 @@ class App extends Component {
   render() {
     return (
       <NativeRouter>
-        <Route path="/dashboard" render={() => {return <DashboardPage id={this.state.id}/>}} />
-        <Route path="/checklist" render={() => {return <ChecklistPage id={this.state.id} />}} />
-        <Route path="/leaderboard" component={LeaderboardPage} />
-        <Route path="/" render={() => {return <DashboardPage id={this.state.id}/>}} />
+        {/* <Route path="/" render={() => {return <DashboardPage id={this.state.id}/>}} /> */}
+        <Route path="/" render={() => {return <ChecklistPage id={this.state.id} />}} />
+        {/* <Route path="/" component={LeaderboardPage} /> */}
+        {/* <Route path="/" component={LoginPage} /> */}
       </NativeRouter>
     );
   }

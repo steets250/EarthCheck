@@ -70,7 +70,7 @@ class Task extends Component {
 
     render(props) {
         return (
-            <View onTouchEnd={this.toggleModal} style={{ ...this.props.style, height: 65, backgroundColor: this.findColor(this.props.task.category), borderRadius: 20, justifyContent: 'center', }}>
+            <View style={{ ...this.props.style, height: 65, backgroundColor: this.findColor(this.props.task.category), borderRadius: 20, justifyContent: 'center', }}>
                 <Modal isVisible={this.state.isModalVisible} backdropColor="white" backdropOpacity={1}>
                     <View>
                         <Flex direction="column" align="center">

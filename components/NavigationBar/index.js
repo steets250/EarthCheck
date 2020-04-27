@@ -12,7 +12,7 @@ const NavigationBar = () => {
       <Flex direction="row">
         <View style={{marginLeft: 55, marginRight: 45, marginTop: 15}}>
           <Link
-            to='/dashboard'
+            to='/'
             underlayColor="#f0f4f7"
           >
             <Image source={dashboard} style={{ width: 40, height: 40,}}></Image>

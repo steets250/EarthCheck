@@ -7,6 +7,7 @@ import PageContainer from '../../components/PageContainer';
 import LeaderboardEntry from '../../components/LeaderboardEntry';
 import { getLeaderboard } from '../../actions/data';
 
+
 class LeaderboardPage extends Component {
 
     state = {
